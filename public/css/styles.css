@@ -1,0 +1,317 @@
+*{padding: 0; margin: 0;}
+
+html {
+    font-family: 'Source Sans Pro';
+    background-color: dimgray;
+}
+body{
+    overflow-x: hidden;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 75px;
+    margin-right: 20%;
+}
+h2{
+    text-align: left;
+    font-size: 32px;
+}
+
+h3{
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+h4{
+    text-align: left;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.header{
+    background-color: whitesmoke;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    float: left;
+    left: 10px;
+    padding-top: 1px;
+    position: absolute;
+    top: 0;
+    width: 52px;
+}
+
+.container {
+    float: left;
+    background:black;
+    width:100%;
+}
+
+.textBox,.footer{
+    z-index: 1000;
+}
+
+
+.textBox{
+    margin: 3%;
+    background-color: ghostwhite;
+    padding: 3% 10% 10% 10%;
+    font-size: 18px;
+}
+
+.cover{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+
+textarea {
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .cover{
+        width: 100%;
+    }
+    .textBox{
+        padding-top: 8%;
+    }
+
+}
+
+.topnav {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.topnav a:hover {
+    background-color: dimgray;
+    color: white;
+}
+
+.navbutton {
+    background-color: #fbfbfb;
+    color: black;
+    padding: 6px;
+    text-align: left;
+    align-items: stretch;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 21px;
+    cursor: pointer;
+    width: 40%;
+    height: 27px;
+    font-weight: bold;
+}
+
+.topnav a.active {
+    background-color: dimgray;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.visually-hidden{
+    position : absolute !important;
+    height:1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+
+/* start of responsive navigation using media query*/
+@media (max-width: 1000px) {
+    .topnav a img {
+        display:none;
+    }
+
+    .topnav {
+        display: flex;
+    }
+
+    .navbutton {
+        width:18% !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .navbutton {
+        font-size:25px;
+        margin:5px 5px 5px 5px;
+        /* height: 30px; */
+        padding: 8px 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .navbutton {width:auto !important;}
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        background-color: #fbfbfb;
+        color: black;
+        float: right;
+        position: fixed;
+        display: block;
+        right: 5px;
+        margin-top: 4px;
+        padding: 10px;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 5px;
+        top: 4px;
+        background-color: dimgray;
+    }
+
+    .topnav.responsive {
+        position: relative;
+        display: block;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: flex;
+        text-align: left;
+    }
+}
+/*end of responsive navigation */
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:dimgray;
+    color: black;
+}
+
+.footergrid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    background-color: dimgray;
+    padding: 10px;
+    color: white;
+    font-size: 22px
+}
+.footergrid-item {
+    background-color: dimgray;
+    padding: 5px;
+    color: white;
+    font-size: 14px;
+    margin: 10px 20px;
+}
+
+
+
+.database{
+    height: 1275px;
+    width: 100%;
+}
+
+
+/* team page content */
+.team img{
+    width: 260px;
+}
+
+main.team {
+    width: 100%;
+    display: inline;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+section.member {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+.image, .bio {
+    padding: 25px;
+}
+
+.image {
+    min-width: 275px;
+    color: black;
+}
+
+.bio {
+    flex-grow: 1;
+    color: black;
+}
+
+@media screen and (max-width: 1050px) {
+    section.member {
+        width: 100%;
+        flex-direction: column;
+    }
+}
+/* end of team page content */
+
+
+.menu a {
+    color: #575757;
+    font-size: 17px;
+    padding: 15px;
+    text-decoration: none;
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+.menu a.active, .menu a:hover {
+    border-bottom: 3px solid dimgray;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 14px;
+    /* the prevents the th scrolling up by the default border size before "sticking" */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    width: 180px;
+    min-width: 50px;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background: #FFF;
+}
+
+form{
+    float: right;
+}
+

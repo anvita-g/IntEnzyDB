@@ -1,0 +1,79 @@
+<title>IntEnzyDB Database</title>
+<body>
+<div class="textBox">
+<div class="menu">
+            <a href="/kinetics/list">Database</a>
+            <a href="/search">Search</a>
+            <a href="/delete">Delete</a>
+            <a href="/statistics">Statistics</a>
+            <a href="/access">Database Access</a>
+</div>
+<br>
+{{#if data}}
+<div style="max-width: 100%; height:600px; overflow: auto;">
+    <table>
+      <thead>
+<tr>
+    <th>Id</th>
+    <th>ec_number</th>
+    <th>uniprot</th>
+    <th>organism</th>
+    <th>substrate_kinetics </th>
+    <th>temperature </th>
+    <th>clean_mut_wt</th>
+    <th>kcat_mut </th>
+    <th>select_key </th>
+    <th>Km_mut </th>
+    <th>select_key_1 </th>
+    <th>kcat_wt </th>
+    <th>Km_wt </th>
+    <th>dG_mut </th>
+    <th>dG_wt </th>
+    <th>ddG </th>
+    <th>ddG_gr </th>
+    <th>wt </th>
+    <th>mut </th>
+    <th>wt_aa </th>
+    <th>mut_aa </th>
+    <th>mut_aa_type </th>
+    <th>wt_aa_type </th>
+</tr>
+ </thead>
+      <tbody>
+{{#each data}}
+<tr>
+    <td>{{this._id}}</td>
+    <td>{{this.ec_number}}</td>
+    <td>{{this.uniprot}}</td>
+    <td>{{this.organism}}</td>
+    <td>{{this.substrate_kinetics}}</td>
+    <td>{{this.temperature}}</td>
+    <td>{{this.clean_mut_wt }}</td>
+    <td>{{this.kcat_mut}}</td>
+    <td>{{this.select_key}}</td>
+    <td>{{this.Km_mut}}</td>
+    <td>{{this.select_key_1}}</td>
+    <td>{{this.kcat_wt}}</td>
+    <td>{{this.Km_wt}}</td>
+    <td>{{this.dG_mut}}</td>
+    <td>{{this.dG_wt}}</td>
+    <td>{{this.ddG}}</td>
+    <td>{{this.ddG_gr}}</td>
+    <td>{{this.wt}}</td>
+    <td>{{this.mut}}</td>
+    <td>{{this.wt_aa}}</td>
+    <td>{{this.mut_aa}}</td>
+    <td>{{this.mut_aa_type}}</td>
+    <td>{{this.wt_aa_type}}</td>
+</tr>
+{{/each}}
+ </tbody>
+    </table>
+  </div>
+{{else}}
+<br>
+<br>
+<h4>No documents found<h4>
+{{/if}}
+</div>
+</body>
