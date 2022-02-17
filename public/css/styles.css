@@ -315,3 +315,13 @@ form{
     float: right;
 }
 
+.graphs{
+    border: 0;
+    display: block;
+    padding: 15px;
+    margin: auto;
+    width: 70%;
+    height: 60%;
+
+}
+
