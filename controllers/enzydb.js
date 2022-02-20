@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const {ObjectID: ObjectId} = require("mongodb");
 const router = express.Router();
 const application  = express();
 
@@ -43,7 +44,7 @@ router.get("/list/search",(req, res)=>{
     console.log(resName);
     var myquery = {_id: new ObjectId(resName)};
 
-    KineticsModel.findOne(myquery, function(err, document){
+    KineticsModel.find(myquery, function(err, document){
         if (!err){
             res.render('list', {data : document});
         }
@@ -51,7 +52,41 @@ router.get("/list/search",(req, res)=>{
             const msg = "Error while searching.";
             res.render('message', {data : msg});
         }
-    });
+    }).lean();
+});
+
+router.get("/list/searchEC",(req, res)=>{
+    var ObjectId = require('mongodb').ObjectID;
+    const { resN } = req.query;
+    console.log(resN);
+    var myquery = {'ec_number': resN};
+
+    KineticsModel.find(myquery, function(err, document){
+        if (!err){
+            res.render('list', {data : document});
+        }
+        else {
+            const msg = "Error while searching.";
+            res.render('message', {data : msg});
+        }
+    }).lean();
+});
+
+router.get("/list/searchUNIPROT",(req, res)=>{
+    var ObjectId = require('mongodb').ObjectID;
+    const { resN } = req.query;
+    console.log(resN);
+    var myquery = {'uniprot': resN};
+
+    KineticsModel.find(myquery, function(err, document){
+        if (!err){
+            res.render('list', {data : document});
+        }
+        else {
+            const msg = "Error while searching.";
+            res.render('message', {data : msg});
+        }
+    }).lean();
 });
 
 module.exports = router;
