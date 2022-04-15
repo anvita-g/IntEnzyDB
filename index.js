@@ -36,9 +36,11 @@ application.get("/",(req, res)=>{
    res.render('home', {});
 });
 
+/*
 application.get("/delete",(req, res)=>{
      res.render('delete', {})
 });
+*/
 
 application.get("/search",(req, res)=>{
     res.render('search', {})
