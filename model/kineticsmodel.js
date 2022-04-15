@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-var KineticsSchema = new mongoose.Schema({
+/* var KineticsSchema = new mongoose.Schema({
     ec_number : String,
     substrate : String,
     value : String,
@@ -22,6 +22,7 @@ var KineticsSchema = new mongoose.Schema({
     mutation_class :  String,
     mutation_kcat_desc :  String
 });
+ */
 
 var KineticsTableSchema = new mongoose.Schema({
     ec_number: String,
@@ -46,7 +47,9 @@ var KineticsTableSchema = new mongoose.Schema({
     mut_aa: String,
     mut_aa_type: String,
     wt_aa_type: String
+}, {
+    collection:"kinetics_table"
 });
 
-mongoose.model("hydrolases_kinetics",KineticsSchema);
+//mongoose.model("hydrolases_kinetics",KineticsSchema);
 mongoose.model("kinetics_table",KineticsTableSchema);
