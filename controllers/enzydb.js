@@ -13,9 +13,9 @@ const ReferenceModel = mongoose.model("reference_table")
 router.get("/list",(req, res)=>{
     mongoose.pluralize(null);
     KineticsModel.find((err, docs) =>{
-        console.log("no error")
+        //console.log("no error")
         if (!err){
-            console.log(docs)
+           // console.log(docs)
             res.render('list', {data : docs})
 
          }
@@ -26,7 +26,7 @@ router.get("/list",(req, res)=>{
 router.get("/list/delete",(req, res)=>{
     var ObjectId = require('mongodb').ObjectID;
     const { resName } = req.query;
-    console.log(resName);
+    //console.log(resName);
     var myquery = {_id: new ObjectId(resName)};
 
     KineticsModel.deleteOne(myquery, function(err, obj) {
@@ -44,7 +44,7 @@ router.get("/list/delete",(req, res)=>{
 router.get("/list/search",(req, res)=>{
     var ObjectId = require('mongodb').ObjectID;
     const { resName } = req.query;
-    console.log(resName);
+    //console.log(resName);
     var myquery = {_id: new ObjectId(resName)};
 
     KineticsModel.find(myquery, function(err, document){
@@ -61,7 +61,7 @@ router.get("/list/search",(req, res)=>{
 router.get("/list/searchEC",(req, res)=>{
     var ObjectId = require('mongodb').ObjectID;
     const { resN } = req.query;
-    console.log(resN);
+    //console.log(resN);
     var myquery = {'ec_number': resN};
 
     KineticsModel.find(myquery, function(err, document){
@@ -78,7 +78,7 @@ router.get("/list/searchEC",(req, res)=>{
 router.get("/list/searchUNIPROT",(req, res)=>{
     var ObjectId = require('mongodb').ObjectID;
     const { resN } = req.query;
-    console.log(resN);
+    //console.log(resN);
     var myquery = {'uniprot': resN};
 
     KineticsModel.find(myquery, function(err, document){
@@ -95,7 +95,7 @@ router.get("/list/searchUNIPROT",(req, res)=>{
 router.get("/structure",(req, res)=>{
     mongoose.pluralize(null);
     StructureModel.find((err, docs) =>{
-        console.log("no error")
+        //console.log("no error")
         if (!err){
          //   console.log(docs)
             res.render('structure', {data : docs})
@@ -107,7 +107,7 @@ router.get("/structure",(req, res)=>{
 router.get("/reference",(req, res)=>{
     mongoose.pluralize(null);
     ReferenceModel.find((err, docs) =>{
-        console.log("no error")
+        //console.log("no error")
         if (!err){
             //   console.log(docs)
             res.render('reference', {data : docs})
@@ -125,7 +125,7 @@ router.get("/structure/searchEC",(req, res)=>{
 
     StructureModel.find(myquery, function(err, document){
         if (!err){
-            res.render('list', {data : document});
+            res.render('structure', {data : document});
         }
         else {
             const msg = "Error while searching.";
@@ -142,7 +142,7 @@ router.get("/structure/searchPDBID",(req, res)=>{
 
     StructureModel.find(myquery, function(err, document){
         if (!err){
-            res.render('list', {data : document});
+            res.render('structure', {data : document});
         }
         else {
             const msg = "Error while searching.";
@@ -159,7 +159,7 @@ router.get("/reference/searchEC",(req, res)=>{
 
     ReferenceModel.find(myquery, function(err, document){
         if (!err){
-            res.render('list', {data : document});
+            res.render('reference', {data : document});
         }
         else {
             const msg = "Error while searching.";
@@ -176,7 +176,7 @@ router.get("/reference/searchPDBID",(req, res)=>{
 
     ReferenceModel.find(myquery, function(err, document){
         if (!err){
-            res.render('list', {data : document});
+            res.render('reference', {data : document});
         }
         else {
             const msg = "Error while searching.";
@@ -193,7 +193,7 @@ router.get("/reference/searchUNIPROT",(req, res)=>{
 
     ReferenceModel.find(myquery, function(err, document){
         if (!err){
-            res.render('list', {data : document});
+            res.render('reference', {data : document});
         }
         else {
             const msg = "Error while searching.";
