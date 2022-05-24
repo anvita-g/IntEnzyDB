@@ -1,0 +1,74 @@
+<title>IntEnzyDB Structure Database</title>
+<body>
+<div class="textBox">
+<div class="menu">
+            <a href="/kinetics/list">Kinetics Data</a>
+            <a href="/kinetics/structure">Structure Data</a>
+            <a href="/kinetics/reference">Kinetics-Structure Reference</a>
+            <a href="/search">Search</a>
+            <a href="/statistics">Statistics</a>
+            <a href="/access">Database Access</a>
+</div>
+<br>
+{{#if data}}
+<div style="max-width: 100%; height:600px; overflow: auto;">
+    <table>
+      <thead>
+<tr>
+    <th>PDB ID</th>
+    <th>Enzyme Type</th>
+    <th>Name</th>
+    <th>Mutation</th>
+    <th>Global Stoichiometry</th>
+    <th>Organism Name</th>
+    <th>Organism_Taxid</th>
+    <th>Ec_Number</th>
+    <th>Strain</th>
+    <th>Gene</th>
+    <th>Resolution</th>
+    <th>Chain Id</th>
+    <th>Fasta Sequence</th>
+    <th>Partial Modeled Residue(yellow)</th>
+    <th>Unmodeled Residue(grey)</th>
+    <th>Active Site</th>
+    <th>Entity ID</th>
+    <th>Num_Seqres</th>
+    <th><div style = "width:3000px">Seqres</div></th>
+
+</tr>
+ </thead>
+      <tbody>
+{{#each data}}
+<tr>
+    <td>{{this.PDB_ID}}</td>
+    <td>{{this.Enzyme_Type}}</td>
+    <td>{{this.Name}}</td>
+    <td>{{this.Mutation}}</td>
+    <td>{{this.Global_Stoichiometry}}</td>
+    <td>{{this.Organism_Name}}</td>
+    <td>{{this.Organism_Taxid}}</td>
+    <td>{{this.Ec_Number}}</td>
+    <td>{{this.Strain}}</td>
+    <td>{{this.Gene}}</td>
+    <td>{{this.Resolution}}</td>
+    <td>{{this.Chain_Id}}</td>
+    <td>{{this.Fasta_Sequence}}</td>
+    <td>{{this.Partial_Modeled_Residue}}</td>
+    <td>{{this.Unmodeled_Residue}}</td>
+    <td>{{this.Active_Site}}</td>
+    <td>{{this.Entity_ID}}</td>
+    <td>{{this.Num_Seqres}}</td>
+    <td><div style = "width:3000px; word-wrap: break-word">{{this.Seqres}}</div></td>
+
+</tr>
+{{/each}}
+ </tbody>
+    </table>
+  </div>
+{{else}}
+<br>
+<br>
+<h4>No documents found<h4>
+{{/if}}
+</div>
+</body>
