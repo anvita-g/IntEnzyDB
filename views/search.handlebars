@@ -1,13 +1,17 @@
 <title>IntEnzyDB Database Search Function</title>
-
 <body>
 <div class="textBox">
 <div class="menu">
-            <a href="/kinetics/list">Database</a>
+            <a href="/kinetics/list">Kinetics Data</a>
+            <a href="/kinetics/structure">Structure Data</a>
+            <a href="/kinetics/reference">Kinetics-Structure Reference</a>
             <a href="/search">Search</a>
             <a href="/statistics">Statistics</a>
             <a href="/access">Database Access</a>
-    <h4>Search document</h4><br><br>
+
+
+    <hr>
+    <h4>Search Kinetics Data</h4>
     <form class="search" action="/kinetics/list/searchEC" method="GET">
                 <input class="bar" type="text" placeholder="Search document by EC number..." name="resN" style="font-size: 12`pt; height: 30px; width:380px; ">
                 <input type="submit" style= "font-size: 12`pt; height: 30px; width:80px">
@@ -16,5 +20,37 @@
                 <input class="bar" type="text" placeholder="Search document by UniProtKB..." name="resN" style="font-size: 12`pt; height: 30px; width:380px; ">
                 <input type="submit" style= "font-size: 12`pt; height: 30px; width:80px">
     </form>
+
+<br><br><br>
+    <hr>
+    <h4>Search Structure Data</h4>
+    <form class="search" action="/kinetics/structure/searchEC" method="GET">
+                <input class="bar" type="text" placeholder="Search document by EC number..." name="resN" style="font-size: 12`pt; height: 30px; width:380px; ">
+                <input type="submit" style= "font-size: 12`pt; height: 30px; width:80px">
+    </form>
+    <form class="search" action="/kinetics/structure/searchPDBID" method="GET">
+                <input class="bar" type="text" placeholder="Search document by PDB ID..." name="resN" style="font-size: 12`pt; height: 30px; width:380px; ">
+                <input type="submit" style= "font-size: 12`pt; height: 30px; width:80px">
+    </form>
+
+<br><br><br>
+    <hr>
+    <h4>Search Kinetics-Structure Reference Data</h4><br>
+    <form class="search" action="/kinetics/reference/searchEC" method="GET">
+                <input class="bar" type="text" placeholder="Search document by EC number..." name="resN" style="font-size: 12`pt; height: 30px; width:380px; ">
+                <input type="submit" style= "font-size: 12`pt; height: 30px; width:80px">
+    </form>
+    <form class="search" action="/kinetics/reference/searchPDBID" method="GET">
+                <input class="bar" type="text" placeholder="Search document by PDB ID..." name="resN" style="font-size: 12`pt; height: 30px; width:380px; ">
+                <input type="submit" style= "font-size: 12`pt; height: 30px; width:80px">
+    </form>
+    <form class="search" action="/kinetics/reference/searchUNIPROT" method="GET">
+                <input class="bar" type="text" placeholder="Search document by UniProt..." name="resN" style="font-size: 12`pt; height: 30px; width:380px; ">
+                <input type="submit" style= "font-size: 12`pt; height: 30px; width:80px">
+    </form>
+    <br><br><br>
+
     </div>
+
+
 </body>
