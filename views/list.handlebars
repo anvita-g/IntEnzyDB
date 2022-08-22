@@ -29,6 +29,7 @@
     <th>kcat Mutant</th>
 
 
+
 </tr>
  </thead>
       <tbody>
@@ -36,7 +37,7 @@
 <tr>
     <td>{{this._id}}</td>
     <td>{{this.ec_number}}</td>
-    <td>{{this.uniprot}}</td>
+    <td><a href ={{this.uniprot_webstie}}>{{this.uniprot}}</a></td>
     <td>{{this.organism}}</td>
     <td>{{this.substrate_kinetics}}</td>
     <td>{{this.temperature}}</td>
@@ -46,6 +47,7 @@
     <td>{{this.Km_mut}}</td>
     <td>{{this.kcat_wt}}</td>
     <td>{{this.kcat_mut}}</td>
+
 </tr>
 {{/each}}
  </tbody>
