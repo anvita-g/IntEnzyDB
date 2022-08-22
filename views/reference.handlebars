@@ -26,16 +26,15 @@
     <th>pdb_chain</th>
     <th>auth_as</th>
     <th>ec_number</th>
-    <th>PDB_website</th>
-    <th>uniprot_webstie</th>
+
 
 </tr>
  </thead>
       <tbody>
 {{#each data}}
 <tr>
-    <td>{{this.PDB_ID}}</td>
-    <td>{{this.uniprot}}</td>
+    <td><a href ={{this.PDB_website}}>{{this.PDB_ID}}</a></td>
+    <td><a href ={{this.uniprot_webstie}}>{{this.uniprot}}</a></td>
     <td>{{this.chainID}}</td>
     <td>{{this.Active_Site}}</td>
     <td>{{this.chain_n_res}}</td>
@@ -45,8 +44,7 @@
     <td>{{this.pdb_chain}}</td>
     <td>{{this.auth_as}}</td>
     <td>{{this.ec_number}}</td>
-    <td><a href ={{this.PDB_website}}>{{this.PDB_ID}}</a></td>
-    <td><a href ={{this.uniprot_webstie}}>{{this.uniprot}}</a></td>
+
 
 </tr>
 {{/each}}
