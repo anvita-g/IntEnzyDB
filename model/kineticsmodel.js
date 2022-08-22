@@ -47,7 +47,8 @@ var KineticsTableSchema = new mongoose.Schema({
     wt_aa: String,
     mut_aa: String,
     mut_aa_type: String,
-    wt_aa_type: String
+    wt_aa_type: String,
+    uniprot_webstie: String
 }, {
     collection:"kinetics_table"
 });
@@ -71,7 +72,8 @@ var StructuresTableSchema = new mongoose.Schema({
     Active_Site: String,
     Entity_ID: String,
     Num_Seqres: String,
-    Seqres: String
+    Seqres: String,
+    PDB_website: String
 
 }, {
     collection:"structure_chain_level_table"
